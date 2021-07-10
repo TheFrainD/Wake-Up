@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     internal float lowJumpFactor = 2.0f;
 
     internal Rigidbody2D rbody;
+    internal bool canMove = true;
 
     private void Awake()
     {

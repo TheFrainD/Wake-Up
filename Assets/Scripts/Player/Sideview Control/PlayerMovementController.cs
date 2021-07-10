@@ -18,7 +18,7 @@ public class PlayerMovementController : MonoBehaviour
     private float moveBy = 0.0f;
     private Vector2 targetVelocity = Vector2.zero;
     private Vector2 currentVelocity = Vector2.zero;
-    private bool isFacingRight = true;
+    private bool isFacingRight = false;
 
     void Awake()
     {
@@ -48,28 +48,30 @@ public class PlayerMovementController : MonoBehaviour
 
     void Update()
     {
-        moveBy = playerController.playerInput.input.x * playerController.playerSpeed;
-        targetVelocity = new Vector2(moveBy, playerController.rbody.velocity.y);
+        if (playerController.canMove) {
+            moveBy = playerController.playerInput.input.x * playerController.playerSpeed;
+            targetVelocity = new Vector2(moveBy, playerController.rbody.velocity.y);
 
-        // Flip sprite
-        if ((moveBy > 0 && !isFacingRight) || (moveBy < 0 && isFacingRight))
-        {
-            Flip();
-        }
+            // Flip sprite
+            if ((moveBy > 0 && !isFacingRight) || (moveBy < 0 && isFacingRight))
+            {
+                Flip();
+            }
 
-        if (playerController.playerInput.isJumpPressed)
-        {
-            Jump();
-        }
+            if (playerController.playerInput.isJumpPressed)
+            {
+                Jump();
+            }
 
-        //Jump
-        if (playerController.rbody.velocity.y < 0)
-        {
-            playerController.rbody.velocity += Vector2.up * Physics2D.gravity.y * (playerController.fallFactor - 1) * Time.deltaTime;
-        }
-        else if (playerController.rbody.velocity.y > 0 && !playerController.playerInput.isJumpPressed)
-        {
-            playerController.rbody.velocity += Vector2.up * Physics2D.gravity.y * (playerController.lowJumpFactor - 1) * Time.deltaTime;
+            //Jump
+            if (playerController.rbody.velocity.y < 0)
+            {
+                playerController.rbody.velocity += Vector2.up * Physics2D.gravity.y * (playerController.fallFactor - 1) * Time.deltaTime;
+            }
+            else if (playerController.rbody.velocity.y > 0 && !playerController.playerInput.isJumpPressed)
+            {
+                playerController.rbody.velocity += Vector2.up * Physics2D.gravity.y * (playerController.lowJumpFactor - 1) * Time.deltaTime;
+            }
         }
     }
 
