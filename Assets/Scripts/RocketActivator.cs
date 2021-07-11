@@ -11,7 +11,7 @@ public class RocketActivator : MonoBehaviour
         if (other.gameObject.tag == "Player") {
             rocketController.isActive = true;
             cameraFollow.target = rocketController.transform;
-            cameraFollow.offset.y = 6f;
+            cameraFollow.offset.y = 8f;
             Invoke("ResetDamping", 1.0f);
             Destroy(other.gameObject);
             Destroy(gameObject);

@@ -18,12 +18,6 @@ public class PlayerTopdownController : MonoBehaviour
     [SerializeField]
     internal float playerSpeed = 5.0f;
 
-    [Header("Sprite Managing")]
-    [SerializeField]
-    internal Sprite spriteUnarmed;
-    [SerializeField]
-    internal Sprite spriteArmed;
-
     internal Rigidbody2D rbody;
     internal Animator animator;
     [SerializeField]

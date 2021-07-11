@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Bedroom Level.unity
+    path: Assets/Scenes/Bedroom level.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Maze.unity
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ceiling Level.unity
     guid: 5441560cfff9da646b80f0e52ce83804
+  - enabled: 1
+    path: Assets/Scenes/Final Scene.unity
+    guid: 7473269c8778dc0468f9e41511897040
   m_configObjects: {}
