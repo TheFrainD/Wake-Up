@@ -5,11 +5,11 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField]
-    Transform target;
+    public Transform target;
     [SerializeField]
-    Vector3 offset;
+    public Vector3 offset;
     [SerializeField]
-    float damping;
+    public float damping;
 
     private Vector3 curerntVelocity = Vector3.zero;
 

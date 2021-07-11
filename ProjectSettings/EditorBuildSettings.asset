@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rocket Level.unity
     guid: e907f794eff852f42a2bc681a2ec450f
+  - enabled: 1
+    path: Assets/Scenes/Ceiling Level.unity
+    guid: 5441560cfff9da646b80f0e52ce83804
   m_configObjects: {}
