@@ -14,6 +14,8 @@ public class PlayerTopdownController : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField]
+    internal Vector3 startingPosition;
+    [SerializeField]
     internal float playerSpeed = 5.0f;
 
     [Header("Sprite Managing")]
@@ -24,11 +26,20 @@ public class PlayerTopdownController : MonoBehaviour
 
     internal Rigidbody2D rbody;
     internal SpriteRenderer spriteRenderer;
+    [SerializeField]
     internal bool isArmed = false;
+    internal bool canMove = true;
 
     private void Awake()
     {
         rbody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start() {
+        if (isArmed) {
+            spriteRenderer.sprite = spriteArmed;
+        }
+        transform.position = startingPosition;
     }
 }

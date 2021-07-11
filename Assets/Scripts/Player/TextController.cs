@@ -12,4 +12,8 @@ public class TextController : MonoBehaviour
     public void SetText(string newText) {
         textObject.text = newText;
     }
+
+    public void ClearText() {
+        textObject.text = "";
+    }
 }
