@@ -7,6 +7,7 @@ public class ClockCutscene : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] PlayerController playerController;
     [SerializeField] TextController textController;
+    [SerializeField] GameObject knigga;
 
     private float timer = 0.0f;
 
@@ -38,6 +39,7 @@ public class ClockCutscene : MonoBehaviour
         if (timer > 7.5f && timer <= 7.7f) {
             textController.SetText("");
             playerController.canMove = true;
+            knigga.GetComponent<Animator>().SetTrigger("KnigaUpadi");
         }
     }
 }

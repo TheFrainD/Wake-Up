@@ -78,13 +78,17 @@ public class PlayerMovementController : MonoBehaviour
             {
                 playerController.rbody.velocity += Vector2.up * Physics2D.gravity.y * (playerController.lowJumpFactor - 1) * Time.deltaTime;
             }
+        } else {
+            playerController.rbody.velocity = Vector2.zero;
         }
     }
 
     private void Move()
     {
-        playerController.rbody.velocity = Vector2.SmoothDamp(playerController.rbody.velocity, targetVelocity,
-            ref currentVelocity, playerController.movementSmoothing);
+        if (playerController.canMove) {
+            playerController.rbody.velocity = Vector2.SmoothDamp(playerController.rbody.velocity, targetVelocity,
+                ref currentVelocity, playerController.movementSmoothing);
+        }
     }
 
     private void Jump()
