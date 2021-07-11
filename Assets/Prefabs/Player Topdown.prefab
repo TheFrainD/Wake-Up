@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 6640068600004202829}
   - component: {fileID: 6640068600004202825}
   - component: {fileID: 6640068600004202828}
+  - component: {fileID: 6640068601639300654}
+  - component: {fileID: 6640068601639300650}
   m_Layer: 0
   m_Name: Player Topdown
   m_TagString: Player
@@ -140,9 +142,11 @@ MonoBehaviour:
   playerInput: {fileID: 6640068600004202828}
   playerMovement: {fileID: 6640068600004202829}
   playerCollision: {fileID: 6640068600004202825}
+  startingPosition: {x: -4.5, y: 10, z: 0}
   playerSpeed: 5
   spriteUnarmed: {fileID: 21300000, guid: aecc6e4907f766942b60ca69d930f43e, type: 3}
   spriteArmed: {fileID: 21300000, guid: 88c7dcb1f2997e24ba39700c6de4180c, type: 3}
+  isArmed: 0
 --- !u!114 &6640068600004202829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +184,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1211f5ed6d7f3aa4e9d968c757b2dca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &6640068601639300654
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640068600004202817}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 619cae606407d3245ae16d5e684ba535, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6640068601639300650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640068600004202817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c1493fe97542741b20b70e12055739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textObject: {fileID: 0}

@@ -17,6 +17,11 @@ public class BedroomCutscene : MonoBehaviour
     private void Update() {
         if (timer >= 0.5f && timer <= 3.0f) {
             playerController.rbody.MovePosition(playerController.rbody.position - (Vector2)player.transform.right * playerController.playerSpeed * Time.deltaTime);
+            playerController.animator.SetFloat("Velocity", 1.0f);
+        }
+
+        if (timer > 3.0f && timer <= 3.2f) {
+            playerController.animator.SetFloat("Velocity", 0.0f);
         }
 
         if (timer >= 2.0f && timer < 5.0f) {

@@ -26,9 +26,11 @@ public class PlayerController : MonoBehaviour
 
     internal Rigidbody2D rbody;
     internal bool canMove = true;
+    internal Animator animator;
 
     private void Awake()
     {
         rbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 }

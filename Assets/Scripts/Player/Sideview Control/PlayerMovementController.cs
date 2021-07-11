@@ -52,6 +52,12 @@ public class PlayerMovementController : MonoBehaviour
             moveBy = playerController.playerInput.input.x * playerController.playerSpeed;
             targetVelocity = new Vector2(moveBy, playerController.rbody.velocity.y);
 
+            if (isGrounded) {
+                playerController.animator.SetFloat("Velocity", Mathf.Abs(playerController.playerInput.input.x));
+            } else {
+                playerController.animator.SetFloat("Velocity", 0.0f);
+            }
+
             // Flip sprite
             if ((moveBy > 0 && !isFacingRight) || (moveBy < 0 && isFacingRight))
             {

@@ -21,6 +21,12 @@ public class PlayerTopdownMovementContoller : MonoBehaviour
     private void Update() 
     {
         velocity = playerController.playerInput.input.normalized * playerController.playerSpeed;
+
+        playerController.animator.SetFloat("Velocity", playerController.playerInput.input != Vector2.zero && playerController.canMove ? 1 : 0);
+
+        if (playerController.isArmed) {
+            playerController.animator.SetBool("isArmed", true);
+        }
     }
 
     private void FixedUpdate() 

@@ -25,7 +25,7 @@ public class PlayerTopdownController : MonoBehaviour
     internal Sprite spriteArmed;
 
     internal Rigidbody2D rbody;
-    internal SpriteRenderer spriteRenderer;
+    internal Animator animator;
     [SerializeField]
     internal bool isArmed = false;
     internal bool canMove = true;
@@ -33,13 +33,10 @@ public class PlayerTopdownController : MonoBehaviour
     private void Awake()
     {
         rbody = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start() {
-        if (isArmed) {
-            spriteRenderer.sprite = spriteArmed;
-        }
         transform.position = startingPosition;
     }
 }
